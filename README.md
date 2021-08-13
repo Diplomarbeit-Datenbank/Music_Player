@@ -33,3 +33,11 @@ Ein Musik Player für die Pixel Boy App
 # Entwickler Verwendung:
     -> Dieses stand-alone Programm benötigt keine zusätzliche programmierung, es kann einfach am Interface plaziert werden
     -> Sollten doch änderungen wie zum Beispiel Farben durchgeführt werden ist dies in Python-Syntax zu vollziehen
+
+# Eigenschaften:
+    o Copyright Christof Haidegger 
+    o Erstellt von Christof Haidegger
+    o Debugging von Christof Haidegger
+    
+    o Geschriebende Zeilen in Python-Code : 472
+    o Geschriebene Zeilen REDME-Code: 44
