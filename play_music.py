@@ -7,9 +7,6 @@
 from pygame import mixer
 
 
-sever_ip = '10.0.0.27'
-
-
 __date__ = '08.07.2021'
 __completed__ = '10.08.2021'
 __work_time__ = 'about 3 Hours'
