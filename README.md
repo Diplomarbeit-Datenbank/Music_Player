@@ -9,7 +9,7 @@ Ein Musik Player für die Pixel Boy App
 
 # Funktionen:
     o Abspielen von Musik am PC oder wenn verbunden automatisch am Pixel-Boy
-    o Die Verbindug zum Pixel-Boy verwendet das im Osi Layer 2 Protokoll sprich Mac-Adressen
+    o Die Verbindung zum Pixel-Boy verwendet das im Osi Layer 2 Protokoll sprich Mac-Adressen
       -> Vorteil: Es kann gleichzeitig Musik abgespielt und den Pixel-Boy Daten gesendet werden,
                   ohne die Übertragungsgeschwindigkeit zu beeinflussen!
     o Automatische Suche nach Liedern
@@ -18,11 +18,11 @@ Ein Musik Player für die Pixel Boy App
 
 # Benötigte Librarys:
     o Ctkinter:       -> Wird für alle Objekte am Media Player benötigt -> Vorteil von Runden und moderner Optik
-                      -> Beschreibung unter follgendem Link: https://github.com/Diplomarbeit-Datenbank/Ctkinter
+                      -> Beschreibung unter folgendem Link: https://github.com/Diplomarbeit-Datenbank/Ctkinter
     o pygame:         -> Für das abspielen von MP3-Datein
                       -> pip install pygame
     o Encode_Umlauts: -> Wird verwendet um Umlaute richtig darzustellen
-                      -> Beschreibung unter follgendem Link: https://github.com/Diplomarbeit-Datenbank/Encode_Umlauts
+                      -> Beschreibung unter folgendem Link: https://github.com/Diplomarbeit-Datenbank/Encode_Umlauts
     o glob:           -> Um alle MP3-Dateien in einem OS-Ordner zu finden
                       -> pip install golob
                  
@@ -31,8 +31,8 @@ Ein Musik Player für die Pixel Boy App
 ![image](https://user-images.githubusercontent.com/87471423/129366157-3b8510a1-013c-4314-a305-7d9ad0fbe20f.png)
 
 # Entwickler Verwendung:
-    -> Dieses stand-alone Programm benötigt keine zusätzliche programmierung, es kann einfach am Interface plaziert werden
-    -> Sollten doch änderungen wie zum Beispiel Farben durchgeführt werden ist dies in Python-Syntax zu vollziehen
+    -> Dieses stand-alone Programm benötigt keine zusätzliche Programmierung, es kann einfach am Interface plaziert werden
+    -> Sollten doch Änderungen wie zum Beispiel Farben durchgeführt werden ist dies in Python-Syntax zu vollziehen
 
 # Eigenschaften:
     o Copyright Christof Haidegger 
