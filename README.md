@@ -4,7 +4,7 @@
 
 Ein Musik Player für die Pixel Boy App
 
-# Aussehen
+# Aussehen:
 ![image](https://user-images.githubusercontent.com/87471423/129363809-1c27f8c0-359d-4512-b7f8-c54a90f07985.png)
 
 # Funktionen:
@@ -39,5 +39,5 @@ Ein Musik Player für die Pixel Boy App
     o Erstellt von Christof Haidegger
     o Debugging von Christof Haidegger
     
-    o Geschriebende Zeilen in Python-Code : 472
-    o Geschriebene Zeilen REDME-Code: 44
+    o Geschriebene Zeilen in Python-Code: 472
+    o Geschriebene Zeilen in README-Code: 44
