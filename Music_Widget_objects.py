@@ -74,8 +74,8 @@ class ActuallyMusicImageCanvas:
         """
         self.song_path_directory = 'Songs/'
         self.Image_Canvas = Ctk.CCanvas(master=master, bg=master['background'], size=(250, 250), corners='angular')
-
-        self.set_thumbnail_image(song_name)
+        if song_name is not None:
+            self.set_thumbnail_image(song_name)
 
     def set_thumbnail_image(self, song_name) -> None:
         """
@@ -85,6 +85,13 @@ class ActuallyMusicImageCanvas:
         self.Image_Canvas.create_image(corner='angular', width=240, height=223, pos=(126, 115),
                                        image_path=self.get_image(song_name))
 
+    def set_thumbnail_gif(self, gif_path) -> None:
+        """
+
+        :param gif_path: path of the gif to set as thumbnail
+        """
+        self.Image_Canvas.create_gif(gif_path, corner='angular', size=(240, 223), pos=(126, 115), transparent=True)
+
     def set_new_image(self, song_name) -> None:
         """
 
@@ -93,6 +100,15 @@ class ActuallyMusicImageCanvas:
         """
         self.Image_Canvas.delete('all')
         self.set_thumbnail_image(song_name)
+
+    def set_new_gif(self, gif_path) -> None:
+        """
+
+        :param gif_path: path to the gif file
+            -> set the new gif file
+        """
+        self.Image_Canvas.delete('all')
+        self.set_thumbnail_gif(gif_path)
 
     def get_image(self, song_name) -> str:
         """
@@ -111,7 +127,7 @@ class MusicTitleCanvas:
        Create the tile of the song in form of a Ctkinter Animated Text
 
     """
-    def __init__(self, master, song_name) -> None:
+    def __init__(self, master, song_name, delay=30) -> None:
         """
 
         :param master:    master is the object where the Title should be placed
@@ -123,7 +139,7 @@ class MusicTitleCanvas:
         self._song_title_label = Ctk.TextAnimation(master=self.Title_Canvas.get_canvas(),
                                                    bg=self.Title_Canvas['background'],
                                                    size=(280, 48), text=song_name, font=('Helvetica', 14), fg='black',
-                                                   label_place=(2, 7), text_space=30, test_delay=77)
+                                                   label_place=(2, 7), text_space=delay, test_delay=77)
 
         self._song_title_label.animated_text.place(x=5, y=1)
 
@@ -179,8 +195,13 @@ class MediaObjectCanvas:
         self.media_object_canvas = Ctk.CCanvas(master=master, bg=__bg, size=(310, 310), corners='rounded', max_rad=40)
 
         # create ScrollCanvas on media_object_canvas
-        self._scroll_widget = Ctk.CScrollWidget(master=self.media_object_canvas.get_canvas(), width=295, height=295,
-                                                bg=__bg)
+        if len(self.song_directories) >= 9:
+            scroll_height = 295
+        else:
+            scroll_height = 34 * len(self.song_directories)
+
+        self._scroll_widget = Ctk.CScrollWidget(master=self.media_object_canvas.get_canvas(), width=295,
+                                                height=scroll_height, bg=__bg)
         self._scroll_widget.place(x=10, y=10)
         # threading.Thread(target=self._place_songs_on_canvas).start()  # there is some issue
         self._place_songs_on_canvas()
@@ -193,6 +214,7 @@ class MediaObjectCanvas:
         if self.playlist is not None:
             songs = open(self.playlist, 'r')
             song_directories = songs.read().split('\n')
+            song_directories = [item for item in song_directories if item != '']
             songs.close()
             return song_directories
 
