@@ -39,5 +39,5 @@ Ein Musik Player für die Pixel Boy App
     o Erstellt von Christof Haidegger
     o Debugging von Christof Haidegger
     
-    o Geschriebene Zeilen in Python-Code: 472
+    o Geschriebene Zeilen in Python-Code: 531
     o Geschriebene Zeilen in README-Code: 44
