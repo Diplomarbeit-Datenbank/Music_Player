@@ -76,6 +76,7 @@ def play_music_file(file_path, func, canvas) -> None:
     :param canvas:    canvas (no matter which) its just to use tkinter after function
     :return:          None if everything had been done correctly
     """
+
     if mixer.music.get_busy():
         mixer.music.stop()
     mixer.music.load(file_path)
