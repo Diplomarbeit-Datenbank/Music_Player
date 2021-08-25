@@ -99,6 +99,7 @@ class ActuallyMusicImageCanvas:
             -> set the new song image
         """
         self.Image_Canvas.delete('all')
+        self.Image_Canvas.delete_gif()
         self.set_thumbnail_image(song_name)
 
     def set_new_gif(self, gif_path) -> None:
@@ -108,6 +109,7 @@ class ActuallyMusicImageCanvas:
             -> set the new gif file
         """
         self.Image_Canvas.delete('all')
+        self.Image_Canvas.delete_gif()
         self.set_thumbnail_gif(gif_path)
 
     def get_image(self, song_name) -> str:
