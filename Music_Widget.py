@@ -29,6 +29,7 @@ class MusicPlayerWidget:
     media_object_canvas = None
     music_player_widget = None
     thumbnail_image = None
+    last_playlist = None
     song_title = None
 
     def __init__(self, master):
@@ -44,13 +45,16 @@ class MusicPlayerWidget:
                                                          max_rad=40)
             self._place_objects()
 
-    def start_new_playlist(self, playlist_path):
+    def start_new_playlist(self, playlist_path, shuffle=False):
         """
 
             -> Start the new Playlist on the Music object
 
+        :param shuffle: if the Playlist should be run in shuffle mode this param would be True
         :param playlist_path: path to the new playlist
         """
+        type(self).last_playlist = playlist_path
+
         if playlist_path is not None:
             play_list_name = playlist_path.split('\\')[-2]
             type(self).song_title.config_text('Playlist: ' + play_list_name)
@@ -67,8 +71,18 @@ class MusicPlayerWidget:
                                                                                 self._music_control,
                                                                                 type(self).thumbnail_image,
                                                                                 type(self).song_title,
-                                                                                playlist=playlist_path)
+                                                                                playlist=playlist_path, _random=shuffle)
         type(self).media_object_canvas.media_object_canvas.place(x=330, y=15)
+
+    def shuffle_playlist_button(self):
+        shuffle_button = Ctk.CButton(master=type(self).music_player_widget,
+                                     bg=type(self).music_player_widget['background'],
+                                     highlight_color=type(self).music_player_widget['background'],
+                                     pressing_color=type(self).music_player_widget['background'], width=30, height=30,
+                                     image=('images/shuffle.png', 'angular', (15, 15), (30, 30)),
+                                     command=lambda: self.start_new_playlist(type(self).last_playlist, True))
+
+        shuffle_button.place(x=290, y=20)
 
     def _place_objects(self):
         """
@@ -96,6 +110,8 @@ class MusicPlayerWidget:
                                                           self._music_control.pause_music,
                                                           type(self).media_object_canvas.next_song)
         button_canvas.Button_Canvas.place(x=13, y=292)
+
+        self.shuffle_playlist_button()
 
 
 def main() -> int:
