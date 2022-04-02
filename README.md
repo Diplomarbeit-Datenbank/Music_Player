@@ -19,7 +19,7 @@ Ein Musik Player für die Pixel Boy App
 # Benötigte Librarys:
     o Ctkinter:       -> Wird für alle Objekte am Media Player benötigt -> Vorteil von Runden und moderner Optik
                       -> Beschreibung unter folgendem Link: https://github.com/Diplomarbeit-Datenbank/Ctkinter
-    o pygame:         -> Für das abspielen von MP3-Datein
+    o pygame:         -> Für das Abspielen von MP3-Datein
                       -> pip install pygame
     o Encode_Umlauts: -> Wird verwendet um Umlaute richtig darzustellen
                       -> Beschreibung unter folgendem Link: https://github.com/Diplomarbeit-Datenbank/Encode_Umlauts
